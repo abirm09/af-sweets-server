@@ -1,13 +1,13 @@
-/* eslint-disable no-console */
 import mongoose from 'mongoose'
 import app from './app'
 import config from './config'
+import { errorLogger, logger } from './shared/logger'
 
 const bootstrap = async () => {
   try {
     await mongoose.connect(config.DB_URL as string)
     app.listen(config.PORT, () => {
-      console.log(
+      logger.info(
         `server is started at ${
           config.ENV === 'development'
             ? 'http://localhost:'
@@ -15,9 +15,9 @@ const bootstrap = async () => {
         }${config.PORT}`,
       )
     })
-    console.log(`Database is connected at ${config.DB_URL}`)
+    logger.info(`Database is connected at ${config.DB_URL}`)
   } catch (error) {
-    console.log(`Failed to connect to database.`, error)
+    errorLogger.error(`Failed to connect to database.`, error)
   }
 }
 

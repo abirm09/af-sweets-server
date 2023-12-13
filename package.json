@@ -41,6 +41,8 @@
     "helmet": "^7.1.0",
     "lint-staged": "^15.2.0",
     "mongoose": "^8.0.3",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "winston": "^3.11.0",
+    "winston-daily-rotate-file": "^4.7.1"
   }
 }
