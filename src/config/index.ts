@@ -1,7 +1,9 @@
 import dotenv from 'dotenv'
 import path from 'path'
+// eslint-disable-next-line no-undef
 dotenv.config({ path: path.join(process.cwd(), '.env') })
 
+// eslint-disable-next-line no-undef
 const env = process.env
 
 export default {
